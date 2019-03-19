@@ -6,8 +6,10 @@ os.chdir(music_downloads)
 print ('\033[92m' + "Start*******************************************************" + '\033[0m')
 youtube_url = input("Paste in youtube url: ")
 
-command = "youtube-dl " + youtube_url
+command = "youtube-dl --verbose " + youtube_url
 call(command.split(), shell=True)
+
+print('If failing.. remember to copy the latest youtube-dl to music_downloads location')
 
 # Find name of mp4/webm file and remove spaces and unwanted characters.
 for file in os.listdir(music_downloads):
